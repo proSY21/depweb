@@ -6,10 +6,13 @@
     <title>Database Management</title>
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <style>
       body {
-        background-color: #fffefe; /* Light Gray */
+        background-color: #fffefe;
+        margin: 0px;
+        padding: 0px; /* Light Gray */
       }
       .main-title {
         display: flex;
@@ -116,7 +119,7 @@
         background-color: #fff; /* White */
         padding: 20px;
         border-radius: 30px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       }
       .faculty-container {
         display: flex;
@@ -253,30 +256,37 @@
       }
 
       /* Media queries for smaller screens... */
-
       @media screen and (max-width: 768px) {
         .main-title {
           flex-direction: row;
           align-items: center;
           text-align: center;
-          font: 18px;
+          display: inline-block;
+
+          /* font: 1px; */
         }
-        #full-name{
-          font:10px ;
+        #full-name {
+          font-size: 15px;
         }
 
         .main-title h1 {
-          margin: 20px 0;
+          margin: 10px 0;
+          font-size: 20px;
+          float: right;
+          clear: both;
         }
 
         .main-title img.logo {
-          height: 80px;
-          width: 80px;
+          height: 60px;
+          width: 60px;
         }
 
         .nav-pills {
           flex-direction: row;
           flex-wrap: wrap;
+          background-color: lightblue;
+          border-radius: 30px;
+          box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.75);
         }
 
         .nav-pills li {
@@ -285,19 +295,42 @@
         }
         .btn-primary {
           font-size: 18px;
-          padding: 5px 8px;
-          margin: 5px;
+          padding: 8px 19px;
+          margin: 8px;
         }
         .nav-pills > li > a {
           font-size: 19px;
-          padding: 8px 16px;
+          padding: 8px 13px;
+          font-size: 17px;
+          width: auto;
+          height: auto;
+          align-items: flex-start;
+          justify-content: flex-start;
+          align-content: flex-start;
+          color: black;
         }
-
+        .nav-pills > li > a#fac4 {
+          justify-self: left;
+          transform: translate(-40px);
+        }
+        .nav-pills > li > a#fac3 {
+          justify-self: left;
+          transform: translate(-6px);
+        }
+        .nav-pills > li > a#fac2 {
+          justify-self: left;
+          transform: translate(-7px);
+        }
+        .nav-pills > li > a#fac0 {
+          justify-self: left;
+          transform: translate(-7px);
+        }
         .faculty-container button {
           width: 80%;
           margin: 20px;
           flex-wrap: wrap;
         }
+        
       }
     </style>
   </head>
@@ -326,17 +359,27 @@
 
       <ul class="nav nav-pills">
         <li class="active">
-          <a data-toggle="pill" href="#curriculum">Curriculum</a>
+          <a id="fac0" data-toggle="pill" href="#curriculum">Curriculum</a>
         </li>
-        <li><a data-toggle="pill" href="#facultyData">Faculty Data</a></li>
-        <li><a data-toggle="pill" href="#obeFolder">OBE Folder</a></li>
-        <li><a data-toggle="pill" href="#alumniData">Alumni Data</a></li>
         <li>
-          <a data-toggle="pill" href="#Faculty" onclick="showFacultyButtons()"
+          <a id="fac1" data-toggle="pill" href="#facultyData">Faculty Data</a>
+        </li>
+        <li>
+          <a id="fac2" data-toggle="pill" href="#obeFolder">OBE Folder</a>
+        </li>
+        <li>
+          <a id="fac3" data-toggle="pill" href="#alumniData">Alumni Data</a>
+        </li>
+        <li>
+          <a
+            id="fac4"
+            data-toggle="pill"
+            href="#Faculty"
+            onclick="showFacultyButtons()"
             >Faculty Teams</a
           >
         </li>
-        <a data-toggle="pill" href="#Addition">
+        <a id="fac5" data-toggle="pill" href="#Addition">
           <div class="plus-icon" data-title="Add Content"></div>
         </a>
       </ul>
